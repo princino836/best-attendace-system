@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CS Group B Attendance</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><h1>CS Group B Attendance</h1><p>Face-to-face & online attendance</p></header>
+<main>
+<nav><button class="tab active" data-panel="student">Student</button><button class="tab" data-panel="admin">Admin</button></nav>
+<section id="student" class="panel">
+<h2>Submit attendance</h2>
+<label>Full name<input id="name" placeholder="Your full name" required></label>
+<label>Student ID<input id="studentId" placeholder="Your student ID" required></label>
+<label>Attendance type<select id="kind"><option value="face">Face-to-face (100 m location check)</option><option value="online">Online (attendance code)</option></select></label>
+<div id="faceBox"><p>Your browser will ask permission to access your location.</p><button id="faceSubmit">Verify location & submit</button></div>
+<div id="onlineBox" hidden><label>Online attendance code<input id="code" autocomplete="one-time-code"></label><button id="onlineSubmit">Verify code & submit</button></div>
+<p id="studentMsg" class="msg"></p>
+</section>
+<section id="admin" class="panel" hidden>
+<h2>Admin login</h2><label>Admin password<input id="adminPassword" type="password"></label><button id="login">Login</button><p id="adminMsg" class="msg"></p>
+<div id="dashboard" hidden>
+<h3>Attendance controls</h3><div class="actions"><button id="openFace">Open face-to-face</button><button id="closeFace">Close face-to-face</button></div>
+<div class="actions"><button id="generateCode">Generate online code</button><button id="closeOnline">Close online attendance</button></div>
+<p id="codeDisplay"></p><p id="status"></p><button id="refresh">Refresh records</button>
+<div class="tablewrap"><table><thead><tr><th>Name</th><th>ID</th><th>Type</th><th>Time</th></tr></thead><tbody id="records"></tbody></table></div>
+<a id="emailReport" href="#" target="_blank" rel="noopener">Prepare email report to princearthur1637@gmail.com</a>
+</div></section>
+</main><footer>CS Group B • Attendance portal</footer><script src="script.js"></script></body></html>
